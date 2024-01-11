@@ -79,3 +79,16 @@ body{
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+label{
+  font-size: medium;
+  font-family: cursive;
+  color: rgb(16, 44, 87);
+}
+
+button{
+  background-color: rgb(218, 192, 163);
+  font-size: medium;
+  font-family: cursive;
+  color: rgb(16, 44, 87);
+}
