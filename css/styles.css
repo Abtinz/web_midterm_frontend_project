@@ -20,6 +20,8 @@ body{
 
 .operation_card_view {
 
+  height: 50%;
+  width: 50%;
 
   /*alignments -> center of screen!*/
   display: flex;
@@ -34,10 +36,12 @@ body{
   transform: translate(-50%, -50%);
 
   /*card view styles*/
+  border-radius: 0%; /* No rounded corners, new style in 2024... */
+  border: 2px solid rgb(218, 192, 163); /* solid nice border */
   gap: 30px; /*gap will help us to set a space between our components*/
   padding: 20px; /*padding form borders for inside components*/
-  border-radius: 0%; /* No Rounded corners, new style in 2024... */
-  border: 2px solid rgb(52, 104, 192); /* solid nice border */
 
+  background: rgb(255, 221, 149,0.3); /* transparent feeling with this light blue color will happen*/
+  backdrop-filter: blur(10px); /* blur filter is the key for our background transparency view */
  
 }
