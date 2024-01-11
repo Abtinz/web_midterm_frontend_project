@@ -41,8 +41,8 @@ body{
   /*card view styles*/
   border-radius: 0%; /* No rounded corners, new style in 2024... */
   border: 2px solid rgb(218, 192, 163); /* solid nice border */
-  gap: 30px; /*gap will help us to set a space between our components*/
-  padding: 20px; /*padding form borders for inside components*/
+  gap: 40px; /*gap will help us to set a space between our components*/
+  padding: 10px; /*padding form borders for inside components*/
 
   /*blur filtering and transparency*/
   background: rgb(255, 221, 149,0.3); /* transparent feeling with this light blue color will happen*/
@@ -52,6 +52,7 @@ body{
 
 .top_heading {
   font-size: medium;
+  font-weight: bold;
   font-family: cursive;
   color: rgb(16, 44, 87);
   align-self: center;
@@ -61,4 +62,20 @@ body{
 .bottom_center_heading {
   align-self: center;
   margin-top: auto;
+}
+
+.input_name_header{
+  font-size: medium;
+  font-family: cursive;
+  color: rgb(16, 44, 87);
+}
+
+#name {
+  border: 2px solid rgb(16, 44, 87); 
+  max-width: 100%;
+  width: 100%;
+  height: 2em; 
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
