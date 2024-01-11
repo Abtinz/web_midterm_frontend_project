@@ -1,10 +1,13 @@
+
 .mainBackground {
+  
+  background-image: url("./asset/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: url("../assets/background.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center; 
 }
