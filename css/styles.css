@@ -39,7 +39,7 @@ body{
   transform: translate(-50%, -50%);
 
   /*card view styles*/
-  border-radius: 0%; /* No rounded corners, new style in 2024... */
+  border-radius: 2cap;
   border: 2px solid rgb(218, 192, 163); /* solid nice border */
   gap: 40px; /*gap will help us to set a space between our components*/
   padding: 10px; /*padding form borders for inside components*/
@@ -60,8 +60,11 @@ body{
 }
 
 .bottom_center_heading {
-  align-self: center;
-  margin-top: auto;
+  font-size: medium;
+  font-family: monospace;
+  font-weight: bold;
+  font-family: cursive;
+  color: rgb(244, 217, 185);
 }
 
 .input_name_header{
@@ -78,6 +81,7 @@ body{
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  border-radius: 2cap;
 }
 
 label{
@@ -91,4 +95,23 @@ button{
   font-size: medium;
   font-family: cursive;
   color: rgb(16, 44, 87);
+  border: 2px solid rgb(16, 44, 87);
+  border-radius: 2cap;
+}
+
+p{
+  font-size:small;
+  font-family: cursive;
+  color: rgb(16, 44, 87);
+}
+
+.saved-answer-area {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  border: 2px solid rgb(16, 44, 87);
+  padding: 10px;
+  border-radius: 2cap;
+
 }
