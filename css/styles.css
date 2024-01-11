@@ -49,3 +49,16 @@ body{
   backdrop-filter: blur(10px); /* blur filter is the key for our background transparency view */
  
 }
+
+.top_heading {
+  font-size: medium;
+  font-family: cursive;
+  color: rgb(16, 44, 87);
+  align-self: center;
+  margin-bottom: auto;
+}
+
+.bottom_center_heading {
+  align-self: center;
+  margin-top: auto;
+}
