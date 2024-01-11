@@ -5,6 +5,8 @@ body{
 .main_background {
   
   /*background section*/
+  /*notice: i set wallpaper from https://wallpaperaccess.com/iran 
+        All intellectual rights of this background belongs to them. I recommend you to visit their good site */
   background-image: url("./asset/background.jpg");  /*background image form assets files*/
   background-repeat: no-repeat; /*no room for duplication in site background, its not 1980 eny more ...*/
   background-size: cover;
@@ -20,16 +22,17 @@ body{
 
 .operation_card_view {
 
+  /*this dimensions are set for test view*/
   height: 50%;
   width: 50%;
 
-  /*alignments -> center of screen!*/
+  /*items alignments -> center of screen!*/
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
 
-  /* Centering the div */
+  /* centering the div */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -41,6 +44,7 @@ body{
   gap: 30px; /*gap will help us to set a space between our components*/
   padding: 20px; /*padding form borders for inside components*/
 
+  /*blur filtering and transparency*/
   background: rgb(255, 221, 149,0.3); /* transparent feeling with this light blue color will happen*/
   backdrop-filter: blur(10px); /* blur filter is the key for our background transparency view */
  
