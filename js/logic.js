@@ -65,6 +65,63 @@ document.addEventListener('DOMContentLoaded', function () {
             alert("complete form");
         }
       });
+
+      nameInput.addEventListener("change", (event) => {
+        userInputtedFormData.name = event.target.value;
+      });
+
+      form.addEventListener("change", () => {
+        userInputtedFormData.gender = document.querySelector('input[name="radio-group"]:checked')?.value;
+      });
+
+      
+      form.addEventListener("submit", (event) => {
+
+        event.preventDefault();     
+    
+        if (userInputtedFormData.name !== '') {
+            if(userInputtedFormData.name.length < 255){
+                var english = /^[A-Za-z ]*$/;
+                var isCorrect = true;
+                for (i=0;i<userInputtedFormData.name.length;i++) {
+                    if (!english.test(userInputtedFormData.name[i]) ){
+                        isCorrect = false;
+                        break; 
+                    }
+                }
+
+                if(!isCorrect){
+                    alert("sorry our predictor wont other alphabet characters");
+                    return;
+                }
+        
+            }else{
+                alert("maximum limitation for inputted name is 255 character");
+                return;
+            }
+          
+        }else {
+            alert("complete form");
+            return;
+        }
+
+        //we passed the fundamental conditions and now api calling is starting
+        genderHeader.innerHTML = "loading...";
+        genderPrediction.innerHTML = "loading...";
+        savedAnswer.innerHTML = "loading...";
+
+        fullname = userInputtedFormData.name;
+    
+        //SHOW RESULT FROM LOCAL STORAGE
+        if (localStorage.getItem(fullname)){
+            savedAnswer.innerHTML = localStorage.getItem(fullname);
+        }else{
+            savedAnswer.innerHTML = "this data is new for our predictor";
+        }
+      
+        
+    
+
     
     
     
