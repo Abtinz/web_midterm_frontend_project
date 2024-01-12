@@ -1,0 +1,1 @@
+const PREDICTOR_API_URL = "https://api.genderize.io/?name=";
