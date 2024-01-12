@@ -22,16 +22,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const genderHeader = document.querySelector("#gender-header");
     const genderPrediction = document.querySelector("#gender-prediction");
 
-    let fullname ;
-
     //this event handler will help us to mange clear events
     clearButton.addEventListener("click", () => {
 
-        if (localStorage.getItem(fullname)) {
-          localStorage.removeItem(fullname);
-          fullname = ""
+        if (localStorage.getItem(userInputtedFormData.name)) {
+          localStorage.removeItem(userInputtedFormData.name);
           savedAnswer.innerHTML = "Saved Submits Area"
           alert("data is cleared");
+          savedAnswer.innerHTML = "Saved Submits Area"
         }else{
             alert("data is already cleared");
         }
