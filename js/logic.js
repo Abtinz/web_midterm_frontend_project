@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if(isCorrect){
                     localStorage.setItem(userInputtedFormData.name, userInputtedFormData.gender);
+                    alert("data is saved successfully");
                 }else{
                     alert("sorry our predictor wont other alphabet characters");
                 }
