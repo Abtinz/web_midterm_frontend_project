@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let fullname ;
 
     //this event handler will help us to mange clear events
-    clear.addEventListener("click", () => {
+    clearButton.addEventListener("click", () => {
 
         if (localStorage.getItem(fullname)) {
           localStorage.removeItem(fullname);
@@ -110,19 +110,28 @@ document.addEventListener('DOMContentLoaded', function () {
         genderPrediction.innerHTML = "loading...";
         savedAnswer.innerHTML = "loading...";
 
-        fullname = userInputtedFormData.name;
     
         //SHOW RESULT FROM LOCAL STORAGE
-        if (localStorage.getItem(fullname)){
-            savedAnswer.innerHTML = localStorage.getItem(fullname);
+        if (localStorage.getItem(userInputtedFormData.name)){
+            savedAnswer.innerHTML = localStorage.getItem(userInputtedFormData.name);
         }else{
             savedAnswer.innerHTML = "this data is new for our predictor";
         }
       
-        
-    
-
-    
-    
-    
+        //now api calling is started here
+        fetch(`${PREDICTOR_API_URL}${userInputtedFormData.name}`)
+          .then((res) => res.json())
+          .then((res) => {
+            //now we will get our response from our http req from server
+            //json form -> gender:Str , probability:Str
+            genderHeader.innerHTML = res.gender;
+            genderPrediction.innerHTML = `${res.probability}`;
+          }).catch((error) => {
+            //ops! error is detected from network and http request or distension server
+            genderHeader.innerHTML = "Predictioned Gender";
+            genderPrediction.innerHTML = "Probability of the prediction";
+            alert(error.message);
+          });
+      });
+      
 });
