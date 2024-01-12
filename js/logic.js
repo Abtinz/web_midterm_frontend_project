@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const nameInput = document.querySelector("#name");
     const form = document.querySelector("#form");
     const savedAnswer = document.querySelector("#saved-answer");
+    const errorText = document.querySelector("#error_text");
+    
 
     //buttons initializing
     const saveButton = document.querySelector("#save");
@@ -21,10 +23,11 @@ document.addEventListener('DOMContentLoaded', function () {
     //results of api callings
     const genderHeader = document.querySelector("#gender-header");
     const genderPrediction = document.querySelector("#gender-prediction");
+    const errorView = document.querySelector("#error_view");
 
     //this event handler will help us to mange clear events
     clearButton.addEventListener("click", () => {
-
+        errorView.style.display = "none";
         if (localStorage.getItem(userInputtedFormData.name)) {
           localStorage.removeItem(userInputtedFormData.name);
           savedAnswer.innerHTML = "Saved Submits Area"
@@ -38,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
       //this event handler will help us to mange save events
       saveButton.addEventListener("click", () => {
+        errorView.style.display = "none";
         if (userInputtedFormData.gender !== undefined && userInputtedFormData.name !== '') {
             if(userInputtedFormData.name.length < 255){
                 var english = /^[A-Za-z ]*$/;
@@ -76,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
       
       form.addEventListener("submit", (event) => {
 
+        errorView.style.display = "none";
         event.preventDefault();     
     
         if (userInputtedFormData.name !== '') {
@@ -103,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
             alert("complete form");
             return;
         }
-
+        
         //we passed the fundamental conditions and now api calling is starting
         genderHeader.innerHTML = "loading...";
         genderPrediction.innerHTML = "loading...";
@@ -126,6 +131,8 @@ document.addEventListener('DOMContentLoaded', function () {
             genderHeader.innerHTML = res.gender;
             genderPrediction.innerHTML = `${res.probability}`;
           }).catch((error) => {
+            errorView.style.display = "flex";
+            errorText.innerHTML = error.message;
             //ops! error is detected from network and http request or distension server
             genderHeader.innerHTML = "Predictioned Gender";
             genderPrediction.innerHTML = "Probability of the prediction";

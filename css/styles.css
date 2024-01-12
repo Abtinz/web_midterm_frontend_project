@@ -24,7 +24,7 @@ body{
 
   /*this dimensions are set for test view*/
   height: 50%;
-  width: 50%;
+  width: 55%;
 
   /*items alignments -> center of screen!*/
   display: flex;
@@ -49,6 +49,21 @@ body{
   backdrop-filter: blur(10px); /* blur filter is the key for our background transparency view */
  
 }
+
+#error_view {
+  display: none;
+  border-radius: 2cap; 
+  background-color: rgb(244, 217, 185);
+}
+
+#error_text{
+  font-size: medium;
+  font-weight: bold;
+  font-family: cursive;
+  color: rgb(131, 0, 0);
+  padding: 10px;
+}
+
 
 .top_heading {
   font-size: medium;
